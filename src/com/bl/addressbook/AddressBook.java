@@ -92,4 +92,24 @@ public class AddressBook {
 
 
     }
+
+    public void deleteContacts() {
+
+        System.out.println("enter the first name to delete");
+        String FirstName = (sc.next());
+        boolean isAvalable = false;
+
+        for (Contacts obj : contactsArrayList){
+            if (obj.getFirstName().equalsIgnoreCase(FirstName)){
+                isAvalable = true;
+                contactsArrayList.remove(obj);
+                System.out.println("Deleted!!!");
+                break;
+            }
+        }
+
+        if (isAvalable == false){
+            System.out.println("Not Avalable!!");
+        }
+    }
 }
