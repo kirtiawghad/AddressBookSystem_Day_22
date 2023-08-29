@@ -47,4 +47,69 @@ public class AddressBook {
 
         }
     }
+
+    public void editContacts() {
+
+        System.out.println("Enter the First name to edit :");
+        String FirstName = (sc.next());
+        boolean isAvalable = false;
+
+        for (Contacts obj :contactsArrayList){
+            if (obj.getFirstName().equals(FirstName)){
+                isAvalable = true;
+
+                System.out.println("Enter the Fisrt name");
+                obj.setFirstName(sc.next());
+
+                System.out.println("enter the Last name");
+                obj.setLastName(sc.next());
+
+                System.out.println("enter the address ");
+                obj.setAddress(sc.next());
+
+                System.out.println("enter the ciry");
+                obj.setCity(sc.next());
+
+                System.out.println("enter the state");
+                obj.setState(sc.next());
+
+                System.out.println("enter the zipcode");
+                obj.setZipCode(sc.nextDouble());
+
+                System.out.println("enter the mobile number");
+                obj.setMobileNumber(sc.nextDouble());
+
+                System.out.println("enter the email");
+                obj.setEmail(sc.next());
+
+
+            }
+        }
+
+        if (isAvalable == false){
+            System.out.println("Not Avalable");
+        }
+
+
+    }
+
+    public void deleteContacts() {
+
+        System.out.println("enter the first name to delete");
+        String FirstName = (sc.next());
+        boolean isAvalable = false;
+
+        for (Contacts obj : contactsArrayList){
+            if (obj.getFirstName().equalsIgnoreCase(FirstName)){
+                isAvalable = true;
+                contactsArrayList.remove(obj);
+                System.out.println("Deleted!!!");
+                break;
+            }
+        }
+
+        if (isAvalable == false){
+            System.out.println("Not Avalable!!");
+        }
+    }
 }
