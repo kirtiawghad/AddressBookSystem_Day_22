@@ -14,7 +14,11 @@ public class AddressBookMain {
 
             switch (number){
                 case 1:
-                    obj.addContacts();
+                    System.out.println("Enter the number of contact you want ot add : ");
+                    int numberOfContacts = sc.nextInt();
+                    for (int i =0; i < numberOfContacts ; i++){
+                        obj.addContacts();
+                    }
                     break;
                 case 2:
                     obj.editContacts();
