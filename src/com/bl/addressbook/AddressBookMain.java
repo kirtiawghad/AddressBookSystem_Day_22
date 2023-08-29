@@ -8,7 +8,7 @@ public class AddressBookMain {
         Scanner sc = new Scanner(System.in);
         int number;
         do {
-            System.out.println( "1.AddContact\n" + "2.DisplayContact");
+            System.out.println( "1.AddContact\n"+"2.EditContact\n" + "3.DisplayContact");
             System.out.println("Enter the number");
             number = sc.nextInt();
 
@@ -17,12 +17,15 @@ public class AddressBookMain {
                     obj.addContacts();
                     break;
                 case 2:
+                    obj.editContacts();
+                    break;
+                case 3:
                     obj.displayContacts();
                     break;
                 default:
                     System.out.println("invalid details!!");
             }
-        }while (number != 2);
+        }while (number != 4);
 
     }
 }
